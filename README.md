@@ -1,2 +1,5 @@
 # Django-Rest-api
-crud api
+CRUD API with NoSql
+Database used MongoDB
+
+
