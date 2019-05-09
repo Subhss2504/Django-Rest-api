@@ -225,7 +225,9 @@ Vary: Accept
 
 
 #http://localhost:8000/api/users/3/delete/
+
 DELETE
+
 GET /api/users/3/delete/
 HTTP 405 Method Not Allowed
 Allow: DELETE, OPTIONS
