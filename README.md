@@ -95,14 +95,99 @@ Vary: Accept
 #http://localhost:8000/api/users/create
 POST Method
 
-GET /api/users/create
-HTTP 405 Method Not Allowed
+Employee Create
+OPTIONS /api/users/create
+HTTP 200 OK
 Allow: POST, OPTIONS
 Content-Type: application/json
 Vary: Accept
 
 {
-    "detail": "Method \"GET\" not allowed."
+    "name": "Employee Create",
+    "description": "",
+    "renders": [
+        "application/json",
+        "text/html"
+    ],
+    "parses": [
+        "application/json",
+        "application/x-www-form-urlencoded",
+        "multipart/form-data"
+    ],
+    "actions": {
+        "POST": {
+            "id": {
+                "type": "integer",
+                "required": false,
+                "read_only": true,
+                "label": "ID"
+            },
+            "first_name": {
+                "type": "string",
+                "required": true,
+                "read_only": false,
+                "label": "First name",
+                "max_length": 50
+            },
+            "last_name": {
+                "type": "string",
+                "required": true,
+                "read_only": false,
+                "label": "Last name",
+                "max_length": 50
+            },
+            "age": {
+                "type": "integer",
+                "required": true,
+                "read_only": false,
+                "label": "Age",
+                "min_value": -2147483648,
+                "max_value": 2147483647
+            },
+            "company_name": {
+                "type": "string",
+                "required": true,
+                "read_only": false,
+                "label": "Company name",
+                "max_length": 80
+            },
+            "city": {
+                "type": "string",
+                "required": true,
+                "read_only": false,
+                "label": "City",
+                "max_length": 50
+            },
+            "state": {
+                "type": "string",
+                "required": true,
+                "read_only": false,
+                "label": "State",
+                "max_length": 50
+            },
+            "zip_code": {
+                "type": "string",
+                "required": true,
+                "read_only": false,
+                "label": "Zip code",
+                "max_length": 50
+            },
+            "email": {
+                "type": "email",
+                "required": true,
+                "read_only": false,
+                "label": "Email",
+                "max_length": 254
+            },
+            "web": {
+                "type": "string",
+                "required": true,
+                "read_only": false,
+                "label": "Web",
+                "max_length": 100
+            }
+        }
+    }
 }
 
 #http://localhost:8000/api/users/?ordering=age
@@ -213,27 +298,120 @@ Vary: Accept
 
 Update 
 
-GET /api/users/3/update/
-HTTP 405 Method Not Allowed
+OPTIONS /api/users/3/update/
+HTTP 200 OK
 Allow: PUT, PATCH, OPTIONS
 Content-Type: application/json
 Vary: Accept
 
 {
-    "detail": "Method \"GET\" not allowed."
+    "name": "Employee Update",
+    "description": "",
+    "renders": [
+        "application/json",
+        "text/html"
+    ],
+    "parses": [
+        "application/json",
+        "application/x-www-form-urlencoded",
+        "multipart/form-data"
+    ],
+    "actions": {
+        "PUT": {
+            "id": {
+                "type": "integer",
+                "required": false,
+                "read_only": true,
+                "label": "ID"
+            },
+            "first_name": {
+                "type": "string",
+                "required": true,
+                "read_only": false,
+                "label": "First name",
+                "max_length": 50
+            },
+            "last_name": {
+                "type": "string",
+                "required": true,
+                "read_only": false,
+                "label": "Last name",
+                "max_length": 50
+            },
+            "age": {
+                "type": "integer",
+                "required": true,
+                "read_only": false,
+                "label": "Age",
+                "min_value": -2147483648,
+                "max_value": 2147483647
+            },
+            "company_name": {
+                "type": "string",
+                "required": true,
+                "read_only": false,
+                "label": "Company name",
+                "max_length": 80
+            },
+            "city": {
+                "type": "string",
+                "required": true,
+                "read_only": false,
+                "label": "City",
+                "max_length": 50
+            },
+            "state": {
+                "type": "string",
+                "required": true,
+                "read_only": false,
+                "label": "State",
+                "max_length": 50
+            },
+            "zip_code": {
+                "type": "string",
+                "required": true,
+                "read_only": false,
+                "label": "Zip code",
+                "max_length": 50
+            },
+            "email": {
+                "type": "email",
+                "required": true,
+                "read_only": false,
+                "label": "Email",
+                "max_length": 254
+            },
+            "web": {
+                "type": "string",
+                "required": true,
+                "read_only": false,
+                "label": "Web",
+                "max_length": 100
+            }
+        }
+    }
 }
-
 
 #http://localhost:8000/api/users/3/delete/
 
 DELETE
 
-GET /api/users/3/delete/
-HTTP 405 Method Not Allowed
+OPTIONS /api/users/3/delete/
+HTTP 200 OK
 Allow: DELETE, OPTIONS
 Content-Type: application/json
 Vary: Accept
 
 {
-    "detail": "Method \"GET\" not allowed."
+    "name": "Employee Delete",
+    "description": "",
+    "renders": [
+        "application/json",
+        "text/html"
+    ],
+    "parses": [
+        "application/json",
+        "application/x-www-form-urlencoded",
+        "multipart/form-data"
+    ]
 }
