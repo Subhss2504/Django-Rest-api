@@ -16,6 +16,8 @@ for login
 
 #http://localhost:8000/api/users/
 
+GET Method
+
 GET /api/users/
 HTTP 200 OK
 Allow: GET, HEAD, OPTIONS
@@ -91,6 +93,7 @@ Vary: Accept
 }
 
 #http://localhost:8000/api/users/create
+POST Method
 
 GET /api/users/create
 HTTP 405 Method Not Allowed
@@ -176,4 +179,59 @@ Vary: Accept
             "web": "http://www.morlongassociates.com"
         }
     ]
+}
+
+#http://localhost:8000/api/users/?first_name=James
+
+GET /api/users/?first_name=James
+HTTP 200 OK
+Allow: GET, HEAD, OPTIONS
+Content-Type: application/json
+Vary: Accept
+
+{
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 1,
+            "first_name": "James",
+            "last_name": "Butt",
+            "age": 70,
+            "company_name": "Benton, John B Jr",
+            "city": "New Orleans",
+            "state": "LA",
+            "zip_code": "70116",
+            "email": "jbutt@gmail.com",
+            "web": "http://www.bentonjohnbjr.com"
+        }
+    ]
+}
+
+#http://localhost:8000/api/users/3/update/
+
+Update 
+
+GET /api/users/3/update/
+HTTP 405 Method Not Allowed
+Allow: PUT, PATCH, OPTIONS
+Content-Type: application/json
+Vary: Accept
+
+{
+    "detail": "Method \"GET\" not allowed."
+}
+
+
+#http://localhost:8000/api/users/3/delete/
+DELETE
+GET /api/users/3/delete/
+HTTP 405 Method Not Allowed
+Allow: DELETE, OPTIONS
+Content-Type: application/json
+Vary: Accept
+
+{
+    "detail": "Method \"GET\" not allowed."
 }
