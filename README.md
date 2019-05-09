@@ -95,7 +95,7 @@ Vary: Accept
 #http://localhost:8000/api/users/create
 POST Method
 
-Employee Create
+
 OPTIONS /api/users/create
 HTTP 200 OK
 Allow: POST, OPTIONS
