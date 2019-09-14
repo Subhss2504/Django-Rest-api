@@ -30,6 +30,7 @@ class EmployeeListView(ListAPIView):
 
 
 
+
 class EmployeeDetailView(RetrieveAPIView):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
