@@ -29,8 +29,6 @@ class EmployeeListView(ListAPIView):
     #     return queryset
 
 
-
-
 class EmployeeDetailView(RetrieveAPIView):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
